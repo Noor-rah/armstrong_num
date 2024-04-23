@@ -1,0 +1,31 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    int n=s.nextInt();
+    int ne=armstrong(n);
+    if (ne==n){
+        System.out.println("Armstrong");
+    }
+    else{
+        System.out.println("Not Armstrong");
+    }
+    }
+    static int armstrong(int n){
+        int ret=0;
+        int dig=count(n);
+        while(n>0){
+            ret+=Math.pow((n%10),dig);
+            n=n/10;
+        }
+        return(ret);
+    }
+    static int count(int n){
+        int f=0;
+        while(n>0){
+            f++;
+            n/=10;
+        }
+        return f;
+    }
+}
